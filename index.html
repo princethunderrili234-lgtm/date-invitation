@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Go Out With Me? 🐾</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SCREEN 1: THE BIG QUESTION -->
+    <div id="screen-1" class="screen active">
+        <div class="pixel-box">🐱🐾</div>
+        <h1>Will you go out with me, Trix?</h1>
+        <div class="btn-group">
+            <button id="yes-btn" onclick="goToScreen('screen-2')">YES+</button>
+            <button id="no-btn" onclick="handleNoClick()">No</button>
+        </div>
+        <p id="no-prompt"></p>
+    </div>
+
+    <!-- SCREEN 2: YAY! -->
+    <div id="screen-2" class="screen">
+        <div class="pixel-box">😽🐈</div>
+        <h1>YAY!<br><span style="font-size: 9px;">Purr-fect choice, I'm so glad u said yes.</span></h1>
+        <button onclick="goToScreen('screen-3')">PRESS TO CONTINUE →</button>
+    </div>
+
+    <!-- SCREEN 3: PICK A DATE -->
+    <div id="screen-3" class="screen">
+        <div class="pixel-box">📅</div>
+        <h1>PICK A DATE</h1>
+        <p>Choose the day for our cat date plan.</p>
+        <input type="date" id="date-input"><br>
+        <button onclick="saveDate()">CONTINUE →</button>
+    </div>
+
+    <!-- SCREEN 4: CHOOSE ACTIVITY -->
+    <div id="screen-4" class="screen">
+        <div class="pixel-box">🍜</div>
+        <h1>WHAT WOULD YOU LIKE TO DO?</h1>
+        <div class="activities-grid">
+            <button class="activity-btn" onclick="selectActivity(this)">McDO</button>
+            <button class="activity-btn" onclick="selectActivity(this)">Jollibee</button>
+            <button class="activity-btn" onclick="selectActivity(this)">COCO</button>
+            <button class="activity-btn" onclick="selectActivity(this)">Ramen</button>
+            <button class="activity-btn" onclick="selectActivity(this)">Photobooth & Cine</button>
+            <button class="activity-btn" onclick="selectActivity(this)">Ribshuck</button>
+        </div>
+        <button onclick="lockInDate()">LOCK IT IN →</button>
+    </div>
+
+    <!-- SCREEN 5: FINAL CONFIRMATION -->
+    <div id="screen-5" class="screen">
+        <div class="pixel-box">🐾💖</div>
+        <h1>IT'S A DATE!</h1>
+        <p id="summary-text" style="font-size: 9px; line-height: 2;">DATE: TBD<br>ACTIVITY: TBD</p>
+        
+        <!-- Floating Love Note Notification -->
+        <div class="notification-badge" onclick="openNote()">💌 1 NEW MESSAGE</div>
+    </div>
+
+    <!-- LOVE NOTE MODAL POPUP -->
+    <div id="love-modal" class="modal">
+        <div class="modal-header">
+            <span>love_note.txt</span>
+            <span class="close-modal" onclick="closeNote()">[x]</span>
+        </div>
+        <p style="font-size: 8px; line-height: 1.7;">
+            Hi trix, I don't know what to call you yet and hindi pa ako legal sa parents mo HAHAHA<br><br>
+            I just want to say that I'm so lucky that I have a chance to take you out on a date HEHEHEHE and I'm so lucky that you even gave me a chance. I want to take you out on this date to show you how much I appreciate you and how much I like you.<br><br>
+            ps. Knight and shining armor 🛡️✨
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+body {
+    background-color: #ffb6c1;
+    background-image: linear-gradient(0deg, #ffb6c1 0%, #ffc0cb 100%);
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: #d81b60;
+}
+
+.screen {
+    display: none;
+    background: rgba(255, 240, 245, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(219, 112, 147, 0.4);
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+    border: 4px solid #ff69b4;
+    position: relative;
+}
+
+.screen.active {
+    display: block;
+}
+
+.pixel-box {
+    background: #fff;
+    border: 3px solid #ff69b4;
+    padding: 15px;
+    display: inline-block;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+h1 {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #c71585;
+}
+
+p {
+    font-size: 10px;
+    margin-bottom: 20px;
+    color: #db7093;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    margin-top: 20px;
+    min-height: 50px;
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    border: 3px solid #c71585;
+    padding: 12px 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px #c71585;
+    transition: transform 0.1s;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 #c71585;
+}
+
+#yes-btn {
+    background-color: #ff1493;
+    font-size: 13px;
+}
+
+#no-btn {
+    background-color: #ffb6c1;
+    color: #8b008b;
+}
+
+input[type="date"] {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    border: 3px solid #ff69b4;
+    border-radius: 8px;
+    background: #fff;
+    color: #c71585;
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.activity-btn {
+    background-color: #fff;
+    color: #c71585;
+    border: 2px solid #ff69b4;
+    padding: 10px 5px;
+    font-size: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.activity-btn.selected {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    border: 2px solid #ff1493;
+    padding: 8px 12px;
+    font-size: 8px;
+    border-radius: 15px;
+    cursor: pointer;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff0f5;
+    border: 4px solid #ff1493;
+    padding: 20px;
+    width: 320px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: left;
+    font-size: 9px;
+    line-height: 1.8;
+    color: #8b008b;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #ff1493;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.close-modal {
+    cursor: pointer;
+    color: #ff1493;
+}
+
+#no-prompt {
+    margin-top: 15px; 
+    min-height: 15px; 
+    color: #ff1493;
+}
