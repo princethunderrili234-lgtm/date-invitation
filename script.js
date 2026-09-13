@@ -44,8 +44,21 @@ function saveDate() {
 }
 
 function lockInDate() {
-    document.getElementById('summary-text').innerHTML = `DATE: ${window.selectedDate}<br>ACTIVITY: ${chosenActivity}`;
+    const dateVal = window.selectedDate;
+    const activityVal = chosenActivity;
+
+    document.getElementById('summary-text').innerHTML = `DATE: ${dateVal}<br>ACTIVITY: ${activityVal}`;
     goToScreen('screen-5');
+
+    // Your email address is set here
+    const myEmail = "wimsygonad@gmail.com"; 
+    
+    const subject = encodeURIComponent("Date Confirmation from Trix! 💖");
+    const body = encodeURIComponent(`Hey!\n\nI picked our date!\nDate: ${dateVal}\nActivity: ${activityVal}\n\nSee you!`);
+
+    setTimeout(() => {
+        window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+    }, 1000);
 }
 
 function openNote() {
